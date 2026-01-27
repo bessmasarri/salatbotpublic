@@ -1,6 +1,6 @@
 import os
 from telegram import Update
-from telegram.ext import Updater, MessageHandler, CommandHandler, CallbackContext, Filters
+from telegram.ext import Updater, MessageHandler, CommandHandler, CallbackContext, Filters 
 from telegram.error import TelegramError
 
 TOKEN = os.getenv("BOT_TOKEN")
@@ -35,8 +35,10 @@ WELCOME_TEXT = (
 SALAT_TEXT = "اللهم صل وسلم وبارك على سيدنا محمد ﷺ"
 
 # ───────── إرسال الصلاة ─────────
-def send_salat(context: CallbackContext):
-    chat_id = context.job.context
+def send_salat(context: CallbackContext, chat_id=None):
+    # si on a context.job, on prend le chat_id de là
+    if chat_id is None:
+        chat_id = context.job.context
     try:
         context.bot.send_message(chat_id=chat_id, text=SALAT_TEXT)
     except TelegramError:
@@ -44,6 +46,7 @@ def send_salat(context: CallbackContext):
         for job in jobs:
             job.schedule_removal()
         print(f"تم حذف المستخدم {chat_id} (حظر البوت)")
+
 
 # ───────── start (يصل تلقائيًا عند الدخول) ─────────
 def start(update: Update, context: CallbackContext):
@@ -93,7 +96,7 @@ def handle_time(update: Update, context: CallbackContext):
         "يمكنك تغيير الوقت في أي وقت بكتابة: وقت"
     )
 
-    send_salat(context)
+    send_salat(context,chat_id)
 
 # ───────── main ─────────
 def main():
