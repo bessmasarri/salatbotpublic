@@ -1,17 +1,52 @@
-# Explication du projet "SalatBot"
+🤍 Salat Reminder Bot – Telegram
 
-## Description
-Le "SalatBot" est un bot Telegram simple qui envoie des rappels automatiques pour prier sur le prophète Muhammad (صلى الله عليه وسلم). 
+بوت Telegram يهدف إلى التذكير بالصلاة على النبي محمد ﷺ بشكل دوري، مع إمكانية تخصيص وقت التذكير حسب رغبة المستخدم، بطريقة بسيطة وإنسانية، تخدم الفرد والمجتمع.
 
-### Fonctionnalités :
-1. Lorsque l'utilisateur commence une conversation avec le bot en envoyant `/start`, son ID de chat est enregistré dans un fichier `chat_ids.txt` pour envoyer des rappels à cet utilisateur à intervalles réguliers.
-2. Le bot envoie un message toutes les 30 minutes avec le texte suivant : 
-   "اللهم صل وسلم وبارك على سيدنا محمد"
+👉 https://t.me/salat_nabiy_bot
 
-### Structure du code :
-- **salatbot.py** : Le fichier principal du bot, où l'on initialise le bot, configure les gestionnaires de commandes et envoie les rappels.
-- **chat_ids.txt** : Fichier où sont stockés les ID de chat des utilisateurs qui ont démarré le bot. Chaque ID est enregistré sur une nouvelle ligne.
-- **requirements.txt** : Liste des dépendances Python nécessaires pour exécuter le bot, notamment `python-telegram-bot`.
+🌿 فكرة المشروع
+قال رسول الله ﷺ:
+"إذًا تُكفى همك ويُغفر لك ذنبك"
+فهذا البوت أُنشئ ليكون رفيقًا يوميًا يذكّر المسلم بالصلاة على النبي ﷺ، لما لها من أثر عظيم في طمأنينة القلب، تفريج الهم، ومغفرة الذنوب.
 
+✨ المميزات (Features)
 
+📩 إرسال تذكير دوري بالصلاة على النبي ﷺ
+⏰ اختيار وقت التذكير بالساعات (من 0.1 إلى 23 ساعة)
+🔁 إمكانية تغيير وقت التذكير في أي وقت بكتابة كلمة "وقت"
+🧠 معالجة الأخطاء (Error Handling) لمنع توقف البوت
+🔐 حماية التوكن باستخدام Environment Variables
+🚀 جاهز للنشر على Cloud Hosting
+🌍 يدعم عددًا كبيرًا من المستخدمين
 
+🛠 التقنيات المستخدمة (Technologies)
+Python
+python-telegram-bot v13
+Telegram Bot API
+JobQueue لإدارة المهام الدورية
+Environment Variables (ENV)
+Git & GitHub
+Cloud Hosting (Railway)
+
+🔐 حماية التوكن (Security)
+لا يتم وضع Bot Token داخل الكود.
+يتم تمريره عبر:
+Environment Variables
+وهذا يضمن أمان البوت عند نشر الكود كمشروع مفتوح المصدر.
+
+🚀 طريقة التشغيل (Run Locally)
+pip install -r requirements.txt
+python salatbot.py
+تأكد من تعيين BOT_TOKEN في Environment Variables قبل التشغيل.
+
+☁️ النشر (Deployment)
+تم تصميم البوت ليكون متوافقًا مع:
+Railway
+Render
+VPS servers
+مع دعم التشغيل المستمر 24/7.
+
+🎯 الهدف من المشروع
+نشر  الصلاة على النبي ﷺ
+استخدام التقنية في مشاريع ذات أثر إيجابي
+الجمع بين البرمجة، القيم، وخدمة الأمة
